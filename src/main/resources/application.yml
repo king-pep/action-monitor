@@ -13,5 +13,6 @@ management:
       show-details: always
     loggers:
       enabled: true
-
-
+spring:
+  application:
+    version: 0.0.1

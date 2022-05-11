@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.betvictor</groupId>
     <artifactId>action-monitor</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>action-monitor</name>
     <description>action-monitor - Technical assessment for betvictor java role</description>
     <properties>
