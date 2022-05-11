@@ -1,6 +1,6 @@
 # Getting Started
 
-This is an assessment project of how to use Spring WebSocket integrated with Message Broker Active MQ to deal with the scenario where you scale out your Microservice and keep the WebSocket communication working between different Clients connected to your backend service.
+This is an action monitor assessment project for betvictor java developer role.
 
 ## Pre Requirements
 - IntelliJ IDE or any IDE of your choice
@@ -17,6 +17,16 @@ This is an assessment project of how to use Spring WebSocket integrated with Mes
 4. Run the class `ActionMonitorApplication`
 5. Access the Client page at http://localhost:8181
 6. On IntelliJ or the IDE of your choice duplicate the Runner for `ActionMonitorApplication` and add the VM parameter `-Dserver.port=8282` to open a new instance in other port.
+7. Enter auth key and websocket key in the Client page and click on the `Connect` button.
+8. Enter the receiver id and message in the Client page and click on the `Send Message` button.
+
+## Unit Testing and Integration Testing strategy
+1. Creation of a Test Plan
+2. Creation of Test Cases and the Test Data
+3. Execution of the test cases, once the code is ready
+4. Fixing of the bugs if present and re testing of the code
+5. Repetition of the test cycle until the Unit is free from all types of bugs
+6. Framework for the test cases: JUnit and Mockito.
 
 
 

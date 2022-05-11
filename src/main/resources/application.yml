@@ -6,3 +6,12 @@ broker:
   port: 61616
   username: artemis
   password: artemis
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    loggers:
+      enabled: true
+
+

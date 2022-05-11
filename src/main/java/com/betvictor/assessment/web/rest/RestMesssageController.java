@@ -1,30 +1,29 @@
 package com.betvictor.assessment.web.rest;
 
-import com.betvictor.assessment.health.ApplicationHealth;
 import com.betvictor.assessment.service.UserService;
-import com.betvictor.assessment.version.AppVersionConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.actuate.health.HealthComponent;
+import org.springframework.boot.actuate.logging.LoggersEndpoint;
+import org.springframework.boot.actuate.health.HealthEndpoint;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.Map;
 
 @RestController
 @Slf4j
 public class RestMesssageController {
     private final UserService service;
-    private final RestTemplate restTemplate;
-    private  AppVersionConfig appVersionConfig;
-    @Value("${info.app.version:unknown}")
-    private String version;
-@Value("${info.app.health.url:unknown}")
-    private String healthUrl;
+  private final HealthEndpoint healthEndpoint;
 
     @Autowired
-    public RestMesssageController(UserService service, RestTemplate restTemplate, AppVersionConfig appVersionConfig) {
+    public RestMesssageController(UserService service, HealthEndpoint healthEndpoint) {
+
         this.service = service;
-        this.restTemplate = restTemplate;
-        this.appVersionConfig = appVersionConfig;
+       this.healthEndpoint = healthEndpoint;
+
     }
 
     @PostMapping(path = "/v1/{toUser}")
@@ -32,14 +31,10 @@ public class RestMesssageController {
         log.info("Rest send message {} to user {}", message, toUser);
         service.notifyUser(toUser, message);
     }
-    //application health status
-    @GetMapping (path = "/v1/health/status")
-    public ApplicationHealth healthStatus() {
-        return restTemplate.getForObject(healthUrl, ApplicationHealth.class);
+    @GetMapping(path = "/v1/health")
+    public ResponseEntity<HealthComponent> health() {
+
+        return ResponseEntity.ok(healthEndpoint.health());
     }
-    //Get application version
-    @GetMapping (path = "/v1/version")
-    public String version() {
-        return version + " : " + AppVersionConfig.getVersion();
-    }
+
 }
