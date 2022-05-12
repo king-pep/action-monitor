@@ -13,7 +13,7 @@ This is an action monitor assessment project for betvictor java developer role.
 
 1. Clone the project and open it with IntelliJ or any IDE of your choice.
 2. Navigate to the project folder and run the Active MQ Artemis by executing the command `docker-compose -f broker-compose.yml up mq`
-3. Navigate to the project folder and run the Sonarqube server by executing the command  `docker-compose -f broker-compose.yml up sonarqube`
+3. Navigate to the project folder and run the Sonarqube server by executing the command  `docker-compose -f sonarqube-compose.yml up sonarqube`
 4. Run the class `ActionMonitorApplication`
 5. Access the Client page at http://localhost:8181
 6. On IntelliJ or the IDE of your choice duplicate the Runner for `ActionMonitorApplication` and add the VM parameter `-Dserver.port=8282` to open a new instance in other port.
