@@ -17,6 +17,13 @@ management:
     web:
       exposure:
         include: health, info
-spring:
+  info:
+    env:
+      enabled: true
+info:
   application:
-    version: 0.0.1
+    name: @project.name@
+    description: @project.description@
+    version: '@project.version@'
+
+

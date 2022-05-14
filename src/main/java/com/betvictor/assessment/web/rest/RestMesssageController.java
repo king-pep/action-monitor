@@ -18,9 +18,6 @@ public class RestMesssageController {
     private final UserService service;
   private final HealthEndpoint healthEndpoint;
 
-  @Value("${spring.application.version}")
-  private String version;
-
     @Autowired
     public RestMesssageController(UserService service, HealthEndpoint healthEndpoint) {
 
