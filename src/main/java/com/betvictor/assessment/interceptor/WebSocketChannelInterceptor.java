@@ -1,5 +1,6 @@
 package com.betvictor.assessment.interceptor;
 
+import com.betvictor.assessment.annotation.Generated;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
@@ -17,6 +18,7 @@ import static java.util.Optional.ofNullable;
 
 @Service
 @Slf4j
+@Generated
 public class WebSocketChannelInterceptor implements ChannelInterceptor {
     static final String API_KEY_HEADER = "authKey";
     static final String SESSION_KEY_HEADER = "simpSessionId";

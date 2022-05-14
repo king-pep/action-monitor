@@ -1,6 +1,7 @@
 package com.betvictor.assessment.handler;
 
 
+import com.betvictor.assessment.annotation.Generated;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.messaging.MessageHeaders;
@@ -13,6 +14,7 @@ import java.security.Principal;
 import static java.util.Optional.ofNullable;
 
 @Slf4j
+@Generated
 public class WebSocketConnectHandler<S> implements ApplicationListener<SessionConnectEvent> {
 
     public WebSocketConnectHandler(SimpMessageSendingOperations messagingTemplate) {

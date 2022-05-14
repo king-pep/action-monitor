@@ -34,15 +34,5 @@ public class RestMesssageController {
         log.info("Rest send message {} to user {}", message, toUser);
         service.notifyUser(toUser, message);
     }
-    @GetMapping(path = "/v1/health")
-    public ResponseEntity<HealthComponent> health() {
-
-        return ResponseEntity.ok(healthEndpoint.health());
-    }
-    @GetMapping(path = "/v1/version")
-    public String version() {
-        return version;
-    }
-
 
 }

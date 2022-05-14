@@ -19,7 +19,8 @@ This is an action monitor assessment project for betvictor java developer role.
 6. On IntelliJ or the IDE of your choice duplicate the Runner for `ActionMonitorApplication` and add the VM parameter `-Dserver.port=8282` to open a new instance in other port.
 7. Enter auth key and websocket key in the Client page and click on the `Connect` button.
 8. Enter the receiver id and message in the Client page and click on the `Send Message` button.
-
+9. application status endpoint: `http://localhost:8181/actuator/health`
+10. application version endpoint: `http://localhost:8181/actuator/info`
 ## Unit Testing and Integration Testing strategy
 1. Creation of a Test Plan
 2. Creation of Test Cases and the Test Data

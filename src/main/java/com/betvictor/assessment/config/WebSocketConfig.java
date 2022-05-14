@@ -1,5 +1,6 @@
 package com.betvictor.assessment.config;
 
+import com.betvictor.assessment.annotation.Generated;
 import com.betvictor.assessment.interceptor.WebSocketChannelInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 @Slf4j
+@Generated
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Autowired
